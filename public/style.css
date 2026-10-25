@@ -1,0 +1,79 @@
+:root {
+  --bg: #FAF3E9; /* 暖纸色 */
+  --card: #FFFFFF;
+  --ink: #4A3A2F;
+  --ink-soft: #7A6A5D;
+  --primary: #E3A857; /* 蜂蜜色 */
+  --primary-hover: #D69A49;
+  --secondary: #8C6F52; /* 木色 */
+  --line: #E8DFD3;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Noto Sans SC', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 20px;
+}
+
+.topbar { text-align: center; margin-bottom: 32px; }
+.topbar h1 { font-size: 28px; font-weight: 700; margin: 0 0 8px; color: var(--secondary); }
+.topbar p { color: var(--ink-soft); font-size: 14px; margin: 0; }
+
+.card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px -8px rgba(140, 111, 82, 0.15);
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+}
+
+h2 { font-size: 18px; margin: 0 0 16px; }
+.subtitle { font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
+.subtitle a { color: var(--secondary); text-decoration: underline; }
+
+.check-box {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--ink-soft); margin-bottom: 16px; cursor: pointer;
+}
+.check-box input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--primary); }
+
+.btn {
+  width: 100%; padding: 14px; border-radius: 16px; border: none;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.primary { background: var(--primary); color: #fff; }
+.btn.primary:hover:not(:disabled) { background: var(--primary-hover); transform: translateY(-1px); }
+.btn.secondary { background: var(--secondary); color: #fff; width: auto; padding: 0 20px;}
+.btn.ghost { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); width: auto; padding: 8px 16px; font-size: 13px; }
+
+.user-card { display: flex; justify-content: space-between; align-items: center; }
+.label { font-size: 12px; color: var(--ink-soft); margin: 0; }
+.email { font-size: 15px; font-weight: 600; margin: 4px 0 0; color: var(--secondary); }
+
+.server-item { display: flex; justify-content: space-between; align-items: center; background: var(--bg); padding: 16px; border-radius: 16px; }
+.server-item h3 { font-size: 16px; margin: 0 0 4px; }
+.server-item .subtitle { margin: 0; }
+.server-item .btn { width: auto; padding: 10px 16px; font-size: 13px; }
+
+.input-group { display: flex; gap: 10px; }
+.input-group input {
+  flex: 1; padding: 12px 16px; border-radius: 16px; border: 1px solid var(--line);
+  font-size: 15px; outline: none; background: var(--bg); color: var(--ink);
+}
+.input-group input:focus { border-color: var(--primary); }
+
+.msg { font-size: 13px; margin-top: 12px; color: #4CAF50; text-align: center; }
+.hidden { display: none !important; }
