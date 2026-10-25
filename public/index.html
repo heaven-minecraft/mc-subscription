@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heaven Minecraft Server</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { background-color: #0f172a; color: #f8fafc; font-family: system-ui, sans-serif; }
+    .card { background: #1e293b; border: 1px solid #334155; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4">
+  <div class="w-full max-w-md space-y-6">
+    
+    <header class="text-center">
+      <h1 class="text-3xl font-bold text-emerald-400">Heaven Minecraft</h1>
+      <p class="text-slate-400 mt-2">优质 Minecraft 游戏体验</p>
+    </header>
+
+    <div id="login-view" class="card p-6 rounded-xl shadow-lg space-y-4">
+      <h2 class="text-xl font-semibold">登录以订阅</h2>
+      <p class="text-sm text-slate-400">我们仅获取您的邮箱。需年满 13 岁并同意<a href="/terms.html" target="_blank" class="text-emerald-400 underline">服务条款</a>和<a href="/privacy.html" target="_blank" class="text-emerald-400 underline">隐私政策</a>。</p>
+      <label class="flex items-center space-x-2 text-sm">
+        <input type="checkbox" id="agree-check" class="rounded bg-slate-800 border-slate-600">
+        <span>我已年满 13 岁并同意条款</span>
+      </label>
+      <button id="btn-login" disabled class="w-full bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 text-white font-bold py-3 rounded-lg transition">使用 Google 登录</button>
+    </div>
+
+    <div id="main-view" class="hidden space-y-4">
+      <div class="card p-4 rounded-xl flex justify-between items-center">
+        <div>
+          <p class="text-sm text-slate-400">当前账号</p>
+          <p id="user-email" class="font-medium text-emerald-400"></p>
+        </div>
+        <button id="btn-logout" class="text-sm text-slate-400 hover:text-white underline">退出</button>
+      </div>
+
+      <div class="card p-6 rounded-xl space-y-4">
+        <h2 class="text-xl font-semibold border-b border-slate-700 pb-2">服务器列表</h2>
+        <div class="flex justify-between items-center bg-slate-800/50 p-4 rounded-lg">
+          <div>
+            <h3 class="font-bold text-lg">生存服 (Survival)</h3>
+            <p class="text-xs text-slate-400">版本 1.21.11 · 需白名单</p>
+          </div>
+          <button class="btn-subscribe bg-emerald-500 hover:bg-emerald-600 px-4 py-2 rounded-lg text-sm font-bold transition">订阅 RM10/月</button>
+        </div>
+        <div class="flex justify-between items-center bg-slate-800/50 p-4 rounded-lg opacity-50">
+          <div>
+            <h3 class="font-bold text-lg">创造服 (Creative)</h3>
+            <p class="text-xs text-slate-400">即将开放</p>
+          </div>
+          <button disabled class="bg-slate-600 px-4 py-2 rounded-lg text-sm font-bold">未开放</button>
+        </div>
+      </div>
+
+      <div class="card p-6 rounded-xl space-y-4">
+        <h2 class="text-lg font-semibold">绑定游戏 ID</h2>
+        <p class="text-xs text-slate-400">订阅前请填写您的正版或离线 Minecraft ID。</p>
+        <div class="flex space-x-2">
+          <input type="text" id="mc-id-input" placeholder="例如: Steve" class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 outline-none focus:border-emerald-500 text-white">
+          <button id="btn-save-id" class="bg-slate-700 hover:bg-slate-600 px-4 py-2 rounded-lg text-sm transition">保存</button>
+        </div>
+        <p id="msg" class="text-sm text-emerald-400 hidden"></p>
+      </div>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
